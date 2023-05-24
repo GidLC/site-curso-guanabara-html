@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tudo sobre Google Glass</title>
+    <link type="text/css" rel="stylesheet" href="_css/estilo.css">
+    <link type="text/css" rel="stylesheet" href="_css/form.css">
+
+</head>
+
+<body>
+
+    <div id="interface">
+
+        <!--- Aqui é criado o cabeçalho com a inserção da imagem --->
+
+        <header id="cabecalho">
+            <hgroup>
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando</h2>
+            </hgroup>
+
+            <img src="_imagens/especificacoes.png" id="icone">
+
+            <nav id="menu">
+                <h1>Menu Principal </h1>
+
+                <ol type="I" start="1">
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="specs.html">Especificações</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fotos.html">Fotos
+                    </li></a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="multimidia.html">Multimídia</a>
+                    </li>
+
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')">
+                        <a href="fale-conosco.html">Fale
+                            conosco</a>
+                    </li>
+                </ol>
+
+            </nav>
+        </header>
+
+        <section id="corpo-full">
+            <article>
+                <header id="header-cabecalho">
+                    <hgroup>
+                        <h3>Glass > Fale Conosco</h3>
+                        <h1>Entre em contato com o Google Glass</h1>
+                        <h2>por Gideone Costa</h2>
+                        <h3 class="direita">Atualizado em 08/Março/2023</h3>
+                    </hgroup>
+                </header>
+
+                <form method="post" id="fContato" action="mailto:gideonilacerda@gmail.com" oninput="calc_total();">
+                    <fieldset id="usuario">
+                        <legend>Identificação do Usuário</legend>
+                        <p>Nome:<input type="text" name="nome" id="cNome" size="25" maxlength="50"
+                                placeholder="Nome Completo"></p>
+                        <p>Senha: <input type="password" name="senha" id="cSenha" size="25" maxlength="20"
+                                placeholder="Senha"></p>
+                        <p>E-mail: <input type="email" name="senha" id="cSenha" size="25" maxlength="40"
+                                placeholder="E-mail"></p>
+                        <fieldset id="sexo">
+                            <legend> Sexo</legend>
+
+                            <input type="radio" id="masc" name="sexo" checked>
+                            <label for="masc">Masculino</label><br>
+
+                            <input type="radio" id="fem" name="sexo">
+                            <label for="fem">Feminino</label>
+                        </fieldset>
+                        <p>Data de Nascimento: <input type="date"></p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend>Endereço do Usuário</legend>
+                        <p><label for="cLograd">Logradouro:</label>
+                            <input type="text" name="logradouro" id="cLograd" size="25" maxlength="100"
+                                placeholder="Rua, Avenida, Rodovia">
+                        </p>
+                        <p><label for="cNumero">Número:</label>
+                            <input type="number" name="numero" id="cNumero" size="5" maxlength="4"
+                                placeholder="N° da casa">
+                        </p>
+                        <p><label for="cEstado">Estado:</label>
+                            <select name="estado" id="cEstado">
+                                <optgroup label="Região Sul">
+                                    <option selected value="PR">Paraná</option>
+                                    <option value="PR">Santa Catarina</option>
+                                    <option value="RS">Rio Grnade do Sul</option>
+                                </optgroup>
+
+                                <optgroup label="Região Sudeste">
+                                    <option value="SP">São Paulo</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="ES">Espírito Santo</option>
+                                </optgroup>
+
+                                <optgroup label="Região Centro-Oeste">
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="GO">Goias</option>
+                                </optgroup>
+
+                            </select>
+                        </p>
+                        <p><label for="cCidade">Cidade:</label>
+                            <input type="text" name="cidade" id="cCidade" maxlength="40" placeholder="Aqui a sua cidade"
+                                list="cidades">
+                        </p>
+                        <datalist id="cidades">
+                            <option value="Curitiba"></option>
+                            <option value="São José dos Pinhais"></option>
+                            <option value="São Paulo"></option>
+                        </datalist>
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend> Mensagem do Usuário</legend>
+                        <p><label>Grau de Urgência:</label>
+                            Min<input type="range" name="urgencia" id="cUrg" min="0" max="10" step="5">Máx</p>
+                        <p><label>Mensagem:</label>
+                            <textarea name="mensagem" id="cMsg" cols="50" rows="5"></textarea>
+                        </p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend>Quero um Google Glass</legend>
+                        <p>
+                            <input type="checkbox" name="tPed" id="pedido" checked /><label for="cPed">Gostaria de
+                                adquirir um Google Glass quando disponível</label>
+                        </p>
+                        <p><label for="cCor">Cor</label>
+                            <input type="color" name="cCor" id="cor" value="grey"/>
+                        </p>
+                        <p><label for="cQtd">Quantidade:</label>
+                        <input type="number" name="cQtd" id="quantidade" min="0" max="5" value="0"></p>
+                        <p><label for="cTot">Preço Total: R$</label>
+                        <input type="text" name="cTot" id="total" placeholder="Total a Pagar" readonly/></p>
+                    </fieldset> 
+
+
+                    <input type="image" src="_imagens/botao-enviar.png">
+                </form>
+
+                <footer id="rodape">
+                    <p>Copyright &copy; 2022 - by Gideone Costa <br>
+                        <a href="https://www.facebook.com/gideoni.lacerda.9" target="_blank">Facebook</a> | <a
+                            href="https://github.com/GidLC" target="_blank">GitHub</a> | <a
+                            href="https://www.linkedin.com/in/gideone-lacerda-costa-342b77185/"
+                            target="_blank">Linkedin</a>
+                    </p>
+                </footer>
+    </div>
+
+</body>
+
+<script src="_javascript/funcoes.js"></script>
+
+<script>
+    function calc_total(){
+        var qtd = parseInt(document.getElementById('quantidade').value);
+        tot = qtd * 1500;
+        document.getElementById('total').value = tot;
+    }
+</script>
+
+</html>
